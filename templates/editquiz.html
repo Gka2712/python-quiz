@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>{{quiz_data.name}}の問題一覧</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <style>
+            body{
+                padding-top:5%;
+                position:relative;
+                text-align:center;
+            }
+            button{
+                margin-top:2%;
+            }
+            .bordersetting{
+                border-bottom:2px solid black;
+                padding-bottom:1%;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>クイズ作成アプリ</h2>
+        <h3>{{quiz_data.name}}の問題一覧</h3>
+        {% if quiz_data.quiz%}
+        
+        {% for quiz in quiz_data.quiz %}
+        <div style="border:solid 1px #000">
+            <h3>{{loop.index}}問目の問題:{{quiz.quiz}}</h3>
+            <h4>1.{{quiz.ans1}}</h4>
+            <h4>2.{{quiz.ans2}}</h4>
+            <h4>3.{{quiz.ans3}}</h4>
+            <h4>4.{{quiz.ans4}}</h4>
+            <h4>答えは{{quiz.cans}}</h4>
+            <a href="/">ユーザはこちらから</a>
+        </div>
+        {% endfor %}
+        {% else %}
+            <h3>まだクイズは登録されていません</h3>
+        {% endif %}
+        <button class="btn btn-primary" onclick="location.href='/sadmin/editdetailquiz/{{quiz_data.id}}'">クイズを作成する</button>
+        <button class="btn btn-primary" onclick="location.href='/sadmin/quizlist'">一覧に戻る</button>
+
+    </body>
+</html>

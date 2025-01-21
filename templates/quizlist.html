@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <style>
+            body{
+                padding-top:5%;
+                position:relative;
+                text-align:center;
+            }
+            button{
+                margin-top:2%;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>クイズ作成アプリ</h2>
+        <table class="table table-hover table-striped">
+            <tr><td>ID</td><td>名前</td><td>閲覧リンク</td><td>作成リンク</td></tr>
+            {% for quiz in quizzes %}
+                <tr>
+                    <td>{{quiz["id"]}}</td>
+                    <td>{{quiz["name"]}}</td>
+                    <td><a href="/sadmin/editquiz/{{quiz.id}}">クイズを閲覧する</a></td>
+                    <td><a href='/sadmin/editdetailquiz/{{quiz.id}}'>クイズを作成する</a></td>
+                </tr>
+            {% endfor %}
+        </table>
+        <button class="btn btn-inline-secondary" onclick="location.href='/sadmin'">一覧に戻る</button>
+    </body>
+</html>

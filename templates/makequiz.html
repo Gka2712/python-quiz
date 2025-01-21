@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <style>
+            body{
+                padding-top:5%;
+                position:relative;
+                text-align:center;
+            }
+            button{
+                margin-top:2%;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>クイズ作成アプリ</h2>
+        <form class="form" action="/sadmin/storequiz" method="POST">
+            <div>
+                <label for="qname">名前</label>
+                <input type="text" name="qname">
+            </div>
+            <button type="submit" class="btn btn-outline-primary">次へ</button>
+            <a href="/sadmin">キャンセル</a>
+        </form>
+    </body>
+</html>

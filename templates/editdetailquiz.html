@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <style>
+            body{
+                padding-top:5%;
+                position:relative;
+                text-align:center;
+            }
+            button{
+                margin-top:2%;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>クイズ作成アプリ</h2>
+        <form class="form" action="/sadmin/storequizdetail/{{quiz_id}}" method="POST">
+            <div>
+                <label for="quiz">問題</label>
+                <input type="text" name="quiz">
+            </div>
+            <div>
+                <label for="ans1">選択肢1</label>
+                <input type="text" name="ans1">
+            </div>
+            <div>
+                <label for="ans2">選択肢2</label>
+                <input type="text" name="ans2">
+            </div>
+            <div>
+                <label for="ans3">選択肢3</label>
+                <input type="text" name="ans3">
+            </div>
+            <div>
+                <label for="ans4">選択肢4</label>
+                <input type="text" name="ans4">
+            </div>
+            <div>
+                <label for="cans">答え</label>
+                <input type="text" name="cans">
+            </div>
+            <button type="submit" class="btn btn-outline-primary">登録する</button>
+        </form>
+        <button onclick="window.history.back()" class="btn btn-inline-secondary">キャンセル</button>
+    </body>
+</html>

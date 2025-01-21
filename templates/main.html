@@ -1,0 +1,23 @@
+<html lang="ja">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <style>
+            body{
+                padding-top:5%;
+                position:relative;
+                text-align:center;
+            }
+            button{
+                margin-top:2%;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>クイズ</h2>
+        {% for quiz in quizzes %}
+            <h3>{{quiz["id"]}}.{{quiz["name"]}}→<a>{{quiz["name"]}}はこちら</a></h3>
+        {% endfor %}
+    </body>
+</html>

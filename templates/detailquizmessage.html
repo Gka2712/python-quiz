@@ -1,0 +1,23 @@
+<html lang="ja">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <style>
+            body{
+                padding-top:5%;
+                position:relative;
+                text-align:center;
+            }
+            button{
+                margin-top:2%;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>クイズ作成アプリ</h2>
+        <h3>クイズは無事作成されました</h3>
+        次のクイズを作成する:<button onclick="location.href='/sadmin/editdetailquiz/{{quiz_id}}'" class="btn btn-primary">クイズの作成</button>
+        クイズを確認する:<button onclick="location.href='/sadmin/editquiz/{{quiz_id}}'" class="btn btn-primary">クイズの確認</button>
+    </body>
+</html>

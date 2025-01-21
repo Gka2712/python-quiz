@@ -1,0 +1,56 @@
+[
+    {
+        "name": "TOEIC",
+        "quiz": [
+            {
+                "quiz": "reject\u306e\u610f\u5473\u306f?",
+                "ans1": "\u601d\u3044\u51fa\u3059",
+                "ans2": "\u63a7\u3048\u308b",
+                "ans3": "\u53d6\u308a\u66ff\u3048\u308b",
+                "ans4": "\u62d2\u5426\u3059\u308b",
+                "cans": "4"
+            },
+            {
+                "quiz": "inform\u306e\u610f\u5473\u306f?",
+                "ans1": "\u77e5\u3089\u305b\u308b",
+                "ans2": "\u5f71\u97ff\u3059\u308b",
+                "ans3": "\u30a4\u30f3\u30d5\u30e9",
+                "ans4": "\u30a4\u30f3\u30d5\u30ec",
+                "cans": "1"
+            },
+            {
+                "quiz": "inform\u306e\u610f\u5473\u306f?",
+                "ans1": "\u77e5\u3089\u305b\u308b",
+                "ans2": "\u5f71\u97ff\u3059\u308b",
+                "ans3": "\u30a4\u30f3\u30d5\u30e9",
+                "ans4": "\u30a4\u30f3\u30d5\u30ec",
+                "cans": "1"
+            },
+            {
+                "quiz": "allow\u306e\u610f\u5473\u306f?",
+                "ans1": "\u8a31\u3059",
+                "ans2": "\u6d17\u3046",
+                "ans3": "\u65bd\u9320\u3059\u308b",
+                "ans4": "\u6368\u3066\u308b",
+                "cans": "1"
+            },
+            {
+                "quiz": "expect",
+                "ans1": "\u7279\u6025",
+                "ans2": "\u5ef6\u9577\u3059\u308b",
+                "ans3": "\u671f\u5f85\u3059\u308b",
+                "ans4": "X\u7dda",
+                "cans": "3"
+            },
+            {
+                "quiz": "expect",
+                "ans1": "\u7279\u6025",
+                "ans2": "\u5ef6\u9577\u3059\u308b",
+                "ans3": "\u671f\u5f85\u3059\u308b",
+                "ans4": "X\u7dda",
+                "cans": "3"
+            }
+        ],
+        "id": 1
+    }
+]
