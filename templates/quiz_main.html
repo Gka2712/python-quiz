@@ -1,0 +1,29 @@
+<html lang="ja">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <style>
+            body{
+                padding-top:5%;
+                position:relative;
+                text-align:center;
+            }
+            button{
+                margin-top:2%;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>クイズ</h2>
+        <table class="table table-hover table-striped">
+        <tr><td>問題番号</td><td>問題</td></tr>
+        {% for quiz in quiz_data.quiz %}
+        <tr>
+            <td>{{loop.index}}</td>
+            <td><a href="/quiz/{{quiz_data.id}}/question/{{loop.index}}">{{quiz.quiz}}</a></td>
+        </tr>
+        {% endfor %}
+        </table>
+    </body>
+</html>

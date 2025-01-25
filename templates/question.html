@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <title>{{quiz_data.name}}の問題一覧</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <style>
+            body{
+                padding-top:5%;
+                position:relative;
+                text-align:center;
+            }
+            button{
+                margin-top:2%;
+            }
+            .bordersetting{
+                border-bottom:2px solid black;
+                padding-bottom:1%;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>クイズ作成アプリ</h2>
+        {% if question_id != 1 %}
+            <button class="btn btn-inline-primary" onclick="location.href='/quiz/{{quiz_data.id}}/question/{{question_id-1}}'">前の問題へ</button>
+        {% endif %}
+        {% if question_id != quizlen-1 %}
+            <button class="btn btn-inline-primary" onclick="location.href='/quiz/{{quiz_data.id}}/question/{{question_id+1}}'">次の問題へ</button>
+        {% endif %}
+        <h3>{{quiz_data.name}}の{{question_id}}問目の問題:{{quiz_data.quiz[question_id].quiz}}</h3>
+
+        <button class="btn btn-inline-primary" onclick="quizjudge(1,{{quiz_data.quiz[question_id].cans}})">{{quiz_data.quiz[question_id].ans1}}</button>
+        <button class="btn btn-inline-primary" onclick="quizjudge(2,{{quiz_data.quiz[question_id].cans}})">{{quiz_data.quiz[question_id].ans2}}</button>
+        <button class="btn btn-inline-primary" onclick="quizjudge(3,{{quiz_data.quiz[question_id].cans}})">{{quiz_data.quiz[question_id].ans3}}</button>
+        <button class="btn btn-inline-primary" onclick="quizjudge(4,{{quiz_data.quiz[question_id].cans}})">{{quiz_data.quiz[question_id].ans4}}</button>
+        <div class="quizjudge">
+        </div>
+        <script>
+            function quizjudge(yourquizid,quizcans){
+                console.log(yourquizid,quizcans)
+                const container=document.createElement("div");
+                container.classList.add("bordersetting");
+                const judgesentense=document.createElement("div");
+                if(yourquizid==quizcans){
+                    judgesentense.textContent="正解です。正解は"+quizcans+"です。";
+                }
+                else{
+                    judgesentense.textContent="不正解です。正解は"+quizcans+"です"
+                }
+                container.appendChild(judgesentense);
+                
+                const closebutton=document.createElement("button");
+                closebutton.textContent="閉じる";
+                closebutton.classList.add("btn","btn-secondary");
+                closebutton.style.cursor="pointer";
+                closebutton.onclick=function(){
+                    container.remove();
+                }
+                container.appendChild(closebutton);
+                const resultArea = document.querySelector(".quizjudge");
+                resultArea.innerHTML = ""; // 以前の結果をクリア
+                resultArea.appendChild(container);
+            }
+        </script>
+    </body>
+</html>

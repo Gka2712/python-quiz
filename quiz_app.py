@@ -27,6 +27,26 @@ def main():
         return render_template('main.html',quizzes=response.json())
     else:
         return "Error",response.status_code    
+@app.route('/quiz/<int:quiz_id>')
+def quiz_main(quiz_id):
+    responses=requests.get('http://127.0.0.1:5000/items')
+    if responses.status_code==200:
+        data=responses.json()
+        quiz_data=next((item for item in data if item['id']==quiz_id),None)
+        quizlen=len(quiz_data)
+        return render_template('quiz_main.html',quiz_data=quiz_data,quizlen=quizlen)
+    else:
+        print("Error:",responses.status_code)
+@app.route('/quiz/<int:quiz_id>/question/<int:question_id>')
+def quiz_question(quiz_id,question_id):
+    responses=requests.get('http://127.0.0.1:5000/items')
+    if responses.status_code==200:
+        data=responses.json()
+        quiz_data=next((item for item in data if item['id']==quiz_id),None)
+        quizlen=len(quiz_data["quiz"])
+        return render_template('question.html',quiz_data=quiz_data,quiz_id=quiz_id,question_id=question_id,quizlen=quizlen)
+    else:
+        print("Error:",responses.status_code)
 @app.route('/sadmin')
 def admin_main():
     return render_template('admin_main.html')
